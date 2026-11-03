@@ -1,0 +1,83 @@
+{
+ "trait_model": {
+  "species_labelled": 4104,
+  "n_features": 46,
+  "prior_alpha": 0.5,
+  "model": "Gradient boosting + engineered features + in-fold family/genus target encoding",
+  "cv_seeds": [
+   0,
+   1,
+   2
+  ],
+  "cv_adjusted": {
+   "accuracy": 0.6908,
+   "balanced_accuracy": 0.4201,
+   "macro_f1": 0.42,
+   "within_one_category": 0.8523,
+   "share_predicted_LC": 0.686,
+   "recall": {
+    "LC": 0.882,
+    "NT": 0.157,
+    "VU": 0.283,
+    "EN": 0.404,
+    "CR": 0.374
+   }
+  },
+  "cv_raw_probabilities": {
+   "accuracy": 0.7181,
+   "balanced_accuracy": 0.3798,
+   "macro_f1": 0.3959,
+   "within_one_category": 0.8533,
+   "share_predicted_LC": 0.795,
+   "recall": {
+    "LC": 0.957,
+    "NT": 0.048,
+    "VU": 0.209,
+    "EN": 0.369,
+    "CR": 0.316
+   }
+  },
+  "cv_threatened_vs_not_auc": 0.8873,
+  "cv_threatened_vs_not_auc_std": 0.0012,
+  "cv_threatened_vs_not_pr_auc": 0.7549,
+  "baseline_always_LC_accuracy": 0.6689,
+  "baseline_random_forest": {
+   "model": "Random Forest + median imputation (first version)",
+   "cv_adjusted": {
+    "accuracy": 0.5943,
+    "balanced_accuracy": 0.4288,
+    "macro_f1": 0.3887,
+    "within_one_category": 0.7997,
+    "share_predicted_LC": 0.526,
+    "recall": {
+     "LC": 0.718,
+     "NT": 0.266,
+     "VU": 0.317,
+     "EN": 0.383,
+     "CR": 0.46
+    }
+   },
+   "cv_threatened_vs_not_auc": 0.8676,
+   "cv_threatened_vs_not_pr_auc": 0.72
+  },
+  "class_counts": {
+   "LC": 2745,
+   "VU": 445,
+   "EN": 428,
+   "NT": 312,
+   "CR": 174
+  },
+  "top_features": {
+   "range_area_per_mass": 0.1754,
+   "genus": 0.1156,
+   "order_": 0.1117,
+   "5-1_AdultBodyMass_g": 0.0646,
+   "lon_span": 0.0504,
+   "28-2_Temp_Mean_01degC": 0.0471,
+   "lat_span": 0.0455,
+   "26-1_GR_Area_km2": 0.0377,
+   "30-2_PET_Mean_mm": 0.0367,
+   "28-1_Precip_Mean_mm": 0.0356
+  }
+ }
+}

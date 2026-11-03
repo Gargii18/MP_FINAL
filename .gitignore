@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+.env
+.secret_key
+users.db
+data/iucn_species.jsonl
+.DS_Store
