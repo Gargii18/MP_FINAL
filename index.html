@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Predict a species' next IUCN Red List category.">
+<title>BioRisk | IUCN Extinction-Risk Predictor</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<nav class="nav"><div class="wrap"><a class="brand" href="#top">🌿 BioRisk</a>
+  <div class="links"><a href="#predict">Predictor</a><a href="#categories">Categories</a><a href="#about">About</a></div></div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <p class="eyebrow">Biodiversity Loss Analysis</p>
+  <h1>Species Extinction-Risk Predictor</h1>
+  <p class="lead">Enter a species name to estimate its next IUCN Red List category, with the reasons for risk and measures to conserve it.</p>
+  <a class="cta" href="#predict">Start prediction</a>
+</div></header>
+
+<main class="wrap">
+<section id="predict" class="card">
+  <h2>Predict species status</h2>
+  <div id="demo" class="banner"></div>
+  <form id="form" autocomplete="off">
+    <label for="name">Species name (common or scientific)</label>
+    <input id="name" list="names" placeholder="e.g. Tiger or Panthera tigris" required>
+    <datalist id="names"></datalist>
+    <details id="manual"><summary>Species not in the list? Enter its details manually</summary>
+      <div class="grid2"><div><label for="status">Current IUCN status</label><select id="status"></select></div>
+      <div><label for="group">Taxonomic group</label><select id="group"></select></div></div>
+    </details>
+    <button type="submit">Predict status</button>
+  </form>
+  <section id="result" aria-live="polite"></section>
+</section>
+
+<section id="categories" class="card">
+  <h2>IUCN Red List categories</h2>
+  <div class="legend">
+    <span><i style="background:#4c9f50"></i><b>LC</b> Least Concern</span>
+    <span><i style="background:#a6c34a"></i><b>NT</b> Near Threatened</span>
+    <span><i style="background:#f2c230"></i><b>VU</b> Vulnerable</span>
+    <span><i style="background:#f28c28"></i><b>EN</b> Endangered</span>
+    <span><i style="background:#d64545"></i><b>CR</b> Critically Endangered</span>
+    <span><i style="background:#4a4a4a"></i><b>EX</b> Extinct</span>
+  </div>
+</section>
+
+<section id="about" class="card">
+  <h2>About and limitations</h2>
+  <ul class="plain">
+    <li>The model predicts the <b>next Red List category</b>, not extinction itself.</li>
+    <li>It uses only the current status and taxonomic group; it cannot assess a species from its name alone.</li>
+    <li>Training data contain only species whose category changed, so predictions assume a change occurs.</li>
+    <li>Threat factors shown for EN and CR species are informational and are not model inputs.</li>
+    <li>Use as an exploratory tool. Official status comes from <a href="https://www.iucnredlist.org" target="_blank" rel="noopener">iucnredlist.org</a>.</li>
+  </ul>
+</section>
+</main>
+<footer><div class="wrap">BioRisk · Biodiversity loss analysis · Data: IUCN Red List</div></footer>
+<script src="data.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
